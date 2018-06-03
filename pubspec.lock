@@ -88,6 +88,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.0-alpha.12"
+  geolocation:
+    dependency: "direct dev"
+    description:
+      name: geolocation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1"
   glob:
     dependency: transitive
     description:
@@ -95,6 +102,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.5"
+  google_maps_flutter:
+    dependency: "direct dev"
+    description:
+      path: "C:/git/plugins/packages/google_maps_flutter"
+      relative: false
+    source: path
+    version: "0.0.1"
   html:
     dependency: transitive
     description:
@@ -368,3 +382,4 @@ packages:
     version: "2.1.13"
 sdks:
   dart: ">=2.0.0-dev.52.0 <=2.0.0-dev.54.0.flutter-46ab040e58"
+  flutter: ">=0.3.0 <2.0.0"

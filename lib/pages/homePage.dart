@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  final String title;
-
-  MyHomePage(this.title);
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
 class SideMenuButton extends StatelessWidget {
   final String _name;
   final Icon _icon;
@@ -41,6 +32,17 @@ class SideMenuButton extends StatelessWidget {
     );
   }
 }
+
+class MyHomePage extends StatefulWidget {
+  final String title;
+
+  MyHomePage(this.title);
+
+  @override
+  _MyHomePageState createState() => new _MyHomePageState();
+}
+
+
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
