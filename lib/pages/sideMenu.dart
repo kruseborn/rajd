@@ -13,7 +13,7 @@ class SideMenuButton extends StatelessWidget {
       children: <Widget>[
         new Padding(padding: new EdgeInsets.all(5.0),),
         new FlatButton(
-          onPressed: () { Navigator.of(context).popAndPushNamed(_onPressedRoute); },
+          onPressed: () { print(_onPressedRoute); Navigator.of(context).popAndPushNamed(_onPressedRoute); },
           child: new Row(
             mainAxisAlignment: MainAxisAlignment.start,
             textDirection: TextDirection.ltr,
@@ -47,6 +47,7 @@ class SideMenu extends StatelessWidget {
           new SideMenuButton("SAFETY", new Icon(Icons.border_top), '/'),
           new SideMenuButton("HELP", new Icon(Icons.bluetooth_audio), '/'),
           new SideMenuButton("SETTINGS", new Icon(Icons.remove), '/'),
+          new SideMenuButton("FIND A RIDE", new Icon(Icons.favorite), '/map'),
         ],
       ),
     );

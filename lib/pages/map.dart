@@ -1,40 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import 'package:geolocation/geolocation.dart';
-
-class SideMenuButton extends StatelessWidget {
-  final String _name;
-  final Icon _icon;
-
-  SideMenuButton(this._name, this._icon);
-
-  @override
-  Widget build(BuildContext context) {
-    return new Column(
-      children: <Widget>[
-        new Padding(padding: new EdgeInsets.all(5.0),),
-        new FlatButton(
-          onPressed: () => print("hej"),
-          child: new Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            textDirection: TextDirection.ltr,
-            children: <Widget>[
-              new Padding(
-                padding: new EdgeInsets.symmetric(horizontal: 30.0),
-              ),
-              _icon,
-              new Padding(
-                padding: new EdgeInsets.all(12.0),
-              ),
-              new Text(_name, style: new TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold))
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
 
 checkGps() async {
 final GeolocationResult result = await Geolocation.requestLocationPermission(const LocationPermission(
@@ -65,10 +31,13 @@ void getLocation() {
 }
 
 class ButtonMenu extends StatelessWidget {
+  final GoogleMapController _controller;
   final double _iconSize = 30.0;
   final Color _buttonBackGroundColor = Colors.white;
   final Color _iconColor = Colors.white;
   
+  ButtonMenu(this._controller);
+
   @override
   Widget build(BuildContext context) {
   return new Container(
@@ -79,7 +48,17 @@ class ButtonMenu extends StatelessWidget {
     children: <Widget>[
       new IconButton(
           icon: new Icon(Icons.my_location),
-          onPressed: ()=>print("my location"),
+          onPressed: () {
+            
+           _controller.animateCamera(CameraUpdate.newCameraPosition(
+                const CameraPosition(
+                  bearing: 270.0,
+                  target: LatLng(59.2203, 18.1416),
+                  tilt: 30.0,
+                  zoom: 13.0,
+                ),
+              ));
+          },
           iconSize: _iconSize,
           color: _iconColor,
       ),
@@ -91,7 +70,7 @@ class ButtonMenu extends StatelessWidget {
       ),
       new IconButton(
           icon: new Icon(Icons.close),
-          onPressed: ()=>print("exit"),
+          onPressed: (){Navigator.of(context).popAndPushNamed("/home");},
           iconSize: _iconSize,
           color: _iconColor,
       ),
@@ -112,7 +91,6 @@ class MapsDemo extends StatefulWidget {
 }
 
 class _MapsDemoState extends State<MapsDemo> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -130,7 +108,7 @@ class _MapsDemoState extends State<MapsDemo> {
           children: <Widget>[
             Center(child: widget.mapWidget),
             new Expanded(
-              child: new ButtonMenu()
+              child: new ButtonMenu(widget.controller)
             )
           ],
         ),

@@ -18,7 +18,7 @@ void main() {
         zoom: 1.0,
       )));
 
-  //final Widget mapWidget = GoogleMapOverlay(controller: controller);
+  final Widget mapWidget = GoogleMapOverlay(controller: controller);
   runApp(MaterialApp(
     home: new Home(),
     theme: ThemeData.dark(),
@@ -26,9 +26,9 @@ void main() {
      '/home': (BuildContext context) => new Home(),
      '/payment': (BuildContext context) => new Payment(),
      '/history': (BuildContext context) => new History(),
+     '/map': (BuildContext context) => new MapsDemo(mapWidget, controller.mapController),
     },
-    //home: new MapsDemo(mapWidget, controller.mapController),
-    //navigatorObservers: <NavigatorObserver>[controller.overlayController],
+    navigatorObservers: <NavigatorObserver>[controller.overlayController],
   ));
 }
 

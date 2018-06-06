@@ -27,6 +27,7 @@ class _PaymentState extends State<Payment> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             new TextField(
+              keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 hintText: "Card number",
               ),
@@ -35,6 +36,7 @@ class _PaymentState extends State<Payment> {
               padding: new EdgeInsets.all(10.0),
             ),
             new TextField(
+              keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 hintText: "Expiration date",
               ),
@@ -43,6 +45,7 @@ class _PaymentState extends State<Payment> {
               padding: new EdgeInsets.all(10.0),
             ),
             new TextField(
+              keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 hintText: "CVC",
               ),
