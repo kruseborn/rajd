@@ -1,34 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geolocation/geolocation.dart';
+import 'package:location/location.dart';
+import 'package:flutter/services.dart';
 
-checkGps() async {
-final GeolocationResult result = await Geolocation.requestLocationPermission(const LocationPermission(
-  android: LocationPermissionAndroid.fine, 
-  ios: LocationPermissionIOS.always,
-  ));
-  if(result.isSuccessful) {
-    print("success gps");
-  } else {
-    print("not success gps");
-  }
-  getLocation();
-}
-
+var currentLocation = <String, double>{};
 double g_latitude, g_longitude;
 
-void getLocation() {
-  print("get location");
-  Geolocation.currentLocation(accuracy: LocationAccuracy.best).listen((result) {
-    if(!result.isSuccessful) {
-      print("not successful");
-    }
-    print("here we are");
-    g_latitude = result.location.latitude;
-    g_longitude = result.location.longitude; 
-    print(g_latitude.toString() + " " + g_longitude.toString());
-  });
+var location = new Location();
+
+void checkGps() async {
+  try {
+    currentLocation = await location.getLocation;
+    g_latitude = currentLocation["latitude"];
+    g_longitude = currentLocation["longitude"];
+    print(g_longitude.toString() + g_latitude.toString());
+  } on PlatformException {
+    currentLocation = null;
+  }
 }
+
 
 class ButtonMenu extends StatelessWidget {
   final GoogleMapController _controller;
@@ -41,7 +31,7 @@ class ButtonMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return new Container(
-    color: Colors.black87,
+    color: Theme.of(context).bottomAppBarColor,
     padding: new EdgeInsets.all(4.0),
     child: new Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -51,9 +41,9 @@ class ButtonMenu extends StatelessWidget {
           onPressed: () {
             
            _controller.animateCamera(CameraUpdate.newCameraPosition(
-                const CameraPosition(
+                 CameraPosition(
                   bearing: 270.0,
-                  target: LatLng(59.2203, 18.1416),
+                  target: LatLng(g_latitude, g_longitude),
                   tilt: 30.0,
                   zoom: 13.0,
                 ),
@@ -95,8 +85,8 @@ class _MapsDemoState extends State<MapsDemo> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print("check gps");
     checkGps();
+    print("check gps");
   }
 
   @override

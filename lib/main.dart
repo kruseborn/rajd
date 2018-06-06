@@ -11,7 +11,7 @@ void main() {
   GoogleMapController.init();
   final GoogleMapOverlayController controller = GoogleMapOverlayController.fromSize(
     width: 400.0,
-    height: 630.0,
+    height: 610.0,
     options: GoogleMapOptions(
       cameraPosition: const CameraPosition(
         target: LatLng(59.22026760000001, 18.141623199999998),

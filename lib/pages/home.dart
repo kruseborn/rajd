@@ -20,8 +20,8 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              'You have pushed the button this many times:',
-              style: Theme.of(context).textTheme.subhead,
+              "RAJD",
+              style: Theme.of(context).textTheme.display4,
             ),
           ],
         ),
