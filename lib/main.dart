@@ -4,8 +4,7 @@ import 'pages/map.dart';
 import 'pages/home.dart';
 import 'pages/payment.dart';
 import 'pages/history.dart';
-
-
+import 'pages/help.dart';
 
 void main() {
   GoogleMapController.init();
@@ -20,7 +19,7 @@ void main() {
 
   final Widget mapWidget = GoogleMapOverlay(controller: controller);
   runApp(MaterialApp(
-    home: new Home(),
+    home: new Help(),
     theme: ThemeData.dark(),
     routes: <String, WidgetBuilder>{
      '/home': (BuildContext context) => new Home(),
@@ -31,4 +30,5 @@ void main() {
     navigatorObservers: <NavigatorObserver>[controller.overlayController],
   ));
 }
+
 
