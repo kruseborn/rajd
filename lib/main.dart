@@ -6,6 +6,8 @@ import 'pages/payment.dart';
 import 'pages/history.dart';
 import 'pages/help.dart';
 import 'pages/barcode.dart';
+import 'pages/barcodeInfo.dart';
+
 
 void main() {
   GoogleMapController.init();
@@ -20,7 +22,7 @@ void main() {
 
   final Widget mapWidget = GoogleMapOverlay(controller: controller);
   runApp(MaterialApp(
-    home: new Barcode(),
+    home: new BarcodeInfo(),
     theme: ThemeData.dark(),
     routes: <String, WidgetBuilder>{
      '/home': (BuildContext context) => new Home(),
