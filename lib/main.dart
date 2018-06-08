@@ -19,16 +19,18 @@ void main() {
         target: LatLng(59.22026760000001, 18.141623199999998),
         zoom: 1.0,
       )));
-
   final Widget mapWidget = GoogleMapOverlay(controller: controller);
   runApp(MaterialApp(
-    home: new BarcodeInfo(),
+    home: new Home(),
     theme: ThemeData.dark(),
     routes: <String, WidgetBuilder>{
      '/home': (BuildContext context) => new Home(),
      '/payment': (BuildContext context) => new Payment(),
      '/history': (BuildContext context) => new History(),
      '/map': (BuildContext context) => new MapsDemo(mapWidget, controller.mapController),
+     '/barcode': (BuildContext context) => new Barcode(),
+     '/barcodeInfo': (BuildContext context) => new BarcodeInfo(),
+     '/help': (BuildContext context) => new Help(),
     },
     navigatorObservers: <NavigatorObserver>[controller.overlayController],
   ));

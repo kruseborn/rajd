@@ -4,7 +4,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Help extends StatelessWidget {
   _launchURL() async {
-    print("heere");
     const url = 'mailto:kruseborn@gmail.com?subject=Rajd support&body=New%20plugin';
     if (await canLaunch(url)) {
       await launch(url);

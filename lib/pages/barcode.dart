@@ -4,6 +4,8 @@ import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'sideMenu.dart';
+
 class Barcode extends StatefulWidget {
   @override
   _BarcodeSate createState() => new _BarcodeSate();
@@ -19,23 +21,36 @@ class _BarcodeSate extends State<Barcode> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-          appBar: new AppBar(
-            title: new Text('Barcode Scanner Example'),
-          ),
-          body: new Center(
-            child: new Column(
-              children: <Widget>[
-                new Container(
-                  child: new MaterialButton(
-                      onPressed: scan, child: new Text("Scan")),
-                  padding: const EdgeInsets.all(8.0),
-                ),
-                new Text(barcode),
-              ],
-            ),
-          )),
+    return Scaffold(
+      appBar: new AppBar(
+        title: new Text("SCAN BIKE"), 
+        centerTitle: true,
+      ),
+      drawer: new SideMenu(),
+      body: new Container(
+        padding: new EdgeInsets.all(32.0),
+        child: new Center(
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              new Image.asset(
+                "images/scooter2.png", 
+                fit: BoxFit.scaleDown,
+              ),
+              new Text(
+                "THE QR CODE IS LOCATED ON THE HANDLEBAR, HOLD THE PHONE OVER THE QR CODE TO START THE RIDE", 
+                style: Theme.of(context).textTheme.body2),
+              RaisedButton(
+                child: new Text("Start scanning"),
+                onPressed: (){ scan(); }
+              ),
+              new Text(
+                barcode, 
+                style: Theme.of(context).textTheme.body2),
+           ],
+         )
+       ),
+      ) 
     );
   }
 

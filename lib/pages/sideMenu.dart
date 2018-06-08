@@ -45,7 +45,7 @@ class SideMenu extends StatelessWidget {
           new SideMenuButton("RIDE HISTORY", new Icon(Icons.bug_report), '/history'),
           new SideMenuButton("HOW TO RIDE", new Icon(Icons.border_outer), '/'),
           new SideMenuButton("SAFETY", new Icon(Icons.border_top), '/'),
-          new SideMenuButton("HELP", new Icon(Icons.bluetooth_audio), '/'),
+          new SideMenuButton("HELP", new Icon(Icons.bluetooth_audio), '/help'),
           new SideMenuButton("SETTINGS", new Icon(Icons.remove), '/'),
           new SideMenuButton("FIND A RIDE", new Icon(Icons.favorite), '/map'),
         ],
