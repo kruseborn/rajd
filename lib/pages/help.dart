@@ -58,7 +58,7 @@ class _HelpState extends State<Help> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          title: new Text("Help", style: fonts.appBarTitle),
+          title: new Text("HELP", style: fonts.appBarTitle),
           centerTitle: true,
         ),
         drawer: new SideMenu(),
@@ -77,13 +77,15 @@ class _HelpState extends State<Help> {
               ),
               new Text(
                   "Feel free to leave us any message about anything that is on your mind. We will try to answer your questions as soon a possible.",
-                  style: Theme.of(context).textTheme.body2),
+                  textAlign: TextAlign.justify,
+                  style: new TextStyle(fontSize: 17.0)),
               new Padding(
                 padding: new EdgeInsets.all(10.0),
               ),
               new Text(
-                  "To get in contact with the Rajd team, please click the link below",
-                  style: Theme.of(context).textTheme.body2),
+                  "To get in contact with the Rajd team, send us a messag below",
+                  textAlign: TextAlign.justify,
+                  style: new TextStyle(fontSize: 17.0)),
               new Padding(
                 padding: new EdgeInsets.all(10.0),
               ),
@@ -109,7 +111,12 @@ class _HelpState extends State<Help> {
                   onPressed: () {
                     if (_message.length > 0) sendMail();
                   },
-                  child: new Text("Contact us")),
+                  child: new Text(
+                    "SEND", 
+                    style: new TextStyle(fontSize: 17.0),
+                    textAlign: TextAlign.justify,
+                    ),
+                  ),
             ],
           )),
         )));

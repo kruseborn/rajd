@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 //import 'package:location/location.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 var currentLocation = <String, double>{};
 double g_latitude, g_longitude;
@@ -34,7 +36,7 @@ class ButtonMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return new Container(
-    color: Theme.of(context).bottomAppBarColor,
+    color: Colors.black,
     padding: new EdgeInsets.all(4.0),
     child: new Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -54,11 +56,10 @@ class ButtonMenu extends StatelessWidget {
           iconSize: _iconSize,
           color: _iconColor,
       ),
-      new FloatingActionButton(
+      new IconButton(
         onPressed: (){ Navigator.of(context).popAndPushNamed("/barcode"); },
-        shape: new CircleBorder(),
-        child: new Text("Rajd", style: new TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18.0, fontStyle: FontStyle.italic),),
-        backgroundColor: _buttonBackGroundColor,
+        icon: new Icon(FontAwesomeIcons.qrcode),
+        iconSize: _iconSize + 10,
       ),
       new IconButton(
           icon: new Icon(Icons.close),

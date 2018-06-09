@@ -62,7 +62,7 @@ class _PaymentState extends State<Payment> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   new RaisedButton(
-                    child: new Text("Save"),
+                    child: new Text("Save", style: new TextStyle(fontSize: 17.0),),
                     onPressed: (){ print("hellor world");},
                   )
                 ],

@@ -39,10 +39,11 @@ class _BarcodeSate extends State<Barcode> {
                 fit: BoxFit.scaleDown,
               ),
               new Text(
-                "THE QR CODE IS LOCATED ON THE HANDLEBAR, HOLD THE PHONE OVER THE QR CODE TO START THE RIDE", 
-                style: Theme.of(context).textTheme.body2),
+                "The QR code is located on the handlebar, hold the phone over the QR code to get the Rajd", 
+                textAlign: TextAlign.justify,
+                style: new TextStyle(fontSize: 17.0,)),
               RaisedButton(
-                child: new Text("Start scanning"),
+                child: new Text("SCAN", style: new TextStyle(fontSize: 17.0, )),
                 onPressed: (){ scan(); }
               ),
               new Text(
