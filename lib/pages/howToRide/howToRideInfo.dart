@@ -9,6 +9,14 @@ class HowToRideInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
      body: new Container(
+       decoration: new BoxDecoration(
+         gradient: new LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter, // 10% of the width, so there are ten blinds.
+            colors: [const Color(0xFFcc2b5e), const Color(0xFF753a88)], // whitish to gray
+            tileMode: TileMode.repeated, // repeats the gradient over the canvas
+          ),
+       ),
        padding: new EdgeInsets.all(32.0),
        child: new Center(
          child: new Column(
@@ -16,7 +24,7 @@ class HowToRideInfo extends StatelessWidget {
            children: <Widget>[
              new Text(
                _title,
-                style: new TextStyle(color: Colors.white, fontSize: 40.0)
+                style: new TextStyle(fontFamily: "Raleway", color: Colors.white, fontSize: 40.0)
              ),
              new Padding(
                padding: new EdgeInsets.all(5.0),

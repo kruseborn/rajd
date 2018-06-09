@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'sideMenu.dart';
+import 'fonts.dart';
 
 class History extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: new AppBar(title: new Text("History")),
+     appBar: new AppBar(title: new Text("History", style: fonts.appBarTitle), centerTitle: true,),
      drawer: new SideMenu(),
      body: new Container(
        padding: new EdgeInsets.all(32.0),

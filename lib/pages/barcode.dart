@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'sideMenu.dart';
+import 'fonts.dart';
 
 class Barcode extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _BarcodeSate extends State<Barcode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("SCAN BIKE"), 
+        title: new Text("SCAN BIKE", style: fonts.appBarTitle), 
         centerTitle: true,
       ),
       drawer: new SideMenu(),

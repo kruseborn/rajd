@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'sideMenu.dart';
+import 'fonts.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _HomeState extends State<Home> {
     return new Scaffold(
       appBar: new AppBar(
         centerTitle: true,
-        title: new Text("RAJD", style: new TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.w100))
+        title: new Text("RAJD", style: fonts.appBarTitle),
       ),
       drawer: new SideMenu(),
       body: new Center(

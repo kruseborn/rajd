@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../sideMenu.dart';
 import 'howToRideInfo.dart';
+import '../fonts.dart';
 
 final String firstTitle = "Find & Unlock";
 final String firstBody = "Find a Rajd near you and tap the button to unlock";
@@ -30,7 +31,7 @@ class HowToRide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: new AppBar(title: new Text("HOW TO RIDE")),
+     appBar: new AppBar(title: new Text("HOW TO RIDE", style: fonts.appBarTitle,), centerTitle: true,),
      drawer: new SideMenu(),
      body: new PageView(
        children: <Widget>[

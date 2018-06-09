@@ -25,7 +25,7 @@ class SideMenuButton extends StatelessWidget {
               new Padding(
                 padding: new EdgeInsets.all(12.0),
               ),
-              new Text(_name, style: new TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.w100))
+              new Text(_name, style: new TextStyle(fontFamily: "Raleway", color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.w100))
             ],
           ),
         ),
@@ -46,7 +46,7 @@ class SideMenu extends StatelessWidget {
           new SideMenuButton("HOW TO RIDE", new Icon(Icons.border_outer), '/howToRide'),
           new SideMenuButton("SAFETY", new Icon(Icons.border_top), '/safety'),
           new SideMenuButton("HELP", new Icon(Icons.bluetooth_audio), '/help'),
-          new SideMenuButton("SETTINGS", new Icon(Icons.remove), '/'),
+          new SideMenuButton("SETTINGS", new Icon(Icons.remove), '/settings'),
           new SideMenuButton("FIND A RIDE", new Icon(Icons.favorite), '/map'),
         ],
       ),

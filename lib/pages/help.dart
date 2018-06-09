@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'sideMenu.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'fonts.dart';
 
 class Help extends StatelessWidget {
   _launchURL() async {
@@ -15,7 +16,7 @@ class Help extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: new AppBar(title: new Text("Help")),
+     appBar: new AppBar(title: new Text("Help", style: fonts.appBarTitle), centerTitle: true,),
      drawer: new SideMenu(),
      body: new Container(
        padding: new EdgeInsets.all(32.0),

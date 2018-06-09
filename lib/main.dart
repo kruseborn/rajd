@@ -9,6 +9,8 @@ import 'pages/barcode.dart';
 import 'pages/barcodeInfo.dart';
 import 'pages/howToRide/howToRide.dart';
 import 'pages/safety.dart';
+import 'pages/settings.dart';
+
 
 void main() {
   GoogleMapController.init();
@@ -22,7 +24,7 @@ void main() {
       )));
   final Widget mapWidget = GoogleMapOverlay(controller: controller);
   runApp(MaterialApp(
-    home: new HowToRide(),
+    home: new Home(),
     theme: ThemeData.dark(),
     routes: <String, WidgetBuilder>{
      '/home': (BuildContext context) => new Home(),
@@ -34,6 +36,7 @@ void main() {
      '/help': (BuildContext context) => new Help(),
      '/howToRide': (BuildContext context) => new HowToRide(),
      '/safety': (BuildContext context) => new Safety(),
+     '/settings': (BuildContext context) => new Setting(),
     },
     navigatorObservers: <NavigatorObserver>[controller.overlayController],
   ));
