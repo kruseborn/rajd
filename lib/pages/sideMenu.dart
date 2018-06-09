@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart'; 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SideMenuButton extends StatelessWidget {
   final String _name;
@@ -25,7 +26,7 @@ class SideMenuButton extends StatelessWidget {
               new Padding(
                 padding: new EdgeInsets.all(12.0),
               ),
-              new Text(_name, style: new TextStyle(fontFamily: "Raleway", color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.w100))
+              new Text(_name, style: new TextStyle(fontFamily: "Raleway", color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.w100))
             ],
           ),
         ),
@@ -41,12 +42,12 @@ class SideMenu extends StatelessWidget {
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new SideMenuButton("PAYMENT", new Icon(Icons.cake), '/payment'),
-          new SideMenuButton("RIDE HISTORY", new Icon(Icons.bug_report), '/history'),
-          new SideMenuButton("HOW TO RIDE", new Icon(Icons.border_outer), '/howToRide'),
-          new SideMenuButton("SAFETY", new Icon(Icons.border_top), '/safety'),
-          new SideMenuButton("HELP", new Icon(Icons.bluetooth_audio), '/help'),
-          new SideMenuButton("SETTINGS", new Icon(Icons.remove), '/settings'),
+          new SideMenuButton("PAYMENT", new Icon(FontAwesomeIcons.coins), '/payment'),
+          new SideMenuButton("RIDE HISTORY", new Icon(Icons.history), '/history'),
+          new SideMenuButton("HOW TO RIDE", new Icon(FontAwesomeIcons.graduationCap), '/howToRide'),
+          new SideMenuButton("SAFETY", new Icon(FontAwesomeIcons.medkit), '/safety'),
+          new SideMenuButton("HELP", new Icon(FontAwesomeIcons.ambulance), '/help'),
+          new SideMenuButton("SETTINGS", new Icon(FontAwesomeIcons.wrench), '/settings'),
           new SideMenuButton("FIND A RIDE", new Icon(Icons.favorite), '/map'),
         ],
       ),
