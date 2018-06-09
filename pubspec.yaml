@@ -36,6 +36,11 @@ flutter:
   assets:
      - images/scooter2.png
      - images/scanner.png
+     - images/helmet.png
+     - images/iphone.png
+     - images/bikeLane.png
+     - images/breaks.png
+     
      
   #  - images/a_dot_ham.jpeg
 
