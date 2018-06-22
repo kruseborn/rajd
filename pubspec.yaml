@@ -21,6 +21,7 @@ dev_dependencies:
   font_awesome_flutter: "^7.0.0"
   mailer:
     path: c:/git/mailer
+  firebase_auth: 0.5.11
     
 
 
