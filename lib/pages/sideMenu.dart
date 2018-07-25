@@ -1,10 +1,12 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'newMap.dart';
 
 class SideMenuButton extends StatelessWidget {
   final String _name;
   final Icon _icon;
   final String _onPressedRoute;
+  final FindRajdState findRajdState = new FindRajdState();
 
   SideMenuButton(this._name, this._icon, this._onPressedRoute);
 
@@ -12,9 +14,15 @@ class SideMenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
-        new Padding(padding: new EdgeInsets.all(5.0),),
+        new Padding(
+          padding: new EdgeInsets.all(5.0),
+        ),
         new FlatButton(
-          onPressed: () { print(_onPressedRoute); Navigator.of(context).popAndPushNamed(_onPressedRoute); },
+          onPressed: () {
+            print(_onPressedRoute);
+            //findRajdState.showMap();
+            Navigator.of(context).popAndPushNamed(_onPressedRoute);
+          },
           child: new Row(
             mainAxisAlignment: MainAxisAlignment.start,
             textDirection: TextDirection.ltr,
